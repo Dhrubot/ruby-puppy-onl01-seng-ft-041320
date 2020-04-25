@@ -5,7 +5,7 @@ class Dog
   @@all = []
   def initialize(name)
     @name = name
-    @@all << self
+    save
   end
   
   def self.all
@@ -13,7 +13,14 @@ class Dog
   end
   
   def self.clear_all
-    @@all.delete
+    @@all = []
   end
   
+  def self.print_all
+    @@all.map {|ele| puts ele}
+  end
+  
+  def save
+    @all << self
+  end
 end
